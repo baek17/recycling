@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>사진 슬라이더</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./slide2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <style>
+        body, h1, h2, h3, h4, h5 {
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            font-size: 16px;
+        }
+        .w3-half img {
+            margin-bottom: -6px;
+            margin-top: 16px;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        .w3-half img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-container" id="services" style="margin-top:75px">
+        <h1 class="w3-xxxlarge w3-text-green"><b>사진 넘어가용</b></h1>
+        <hr style="width:50px;border:5px solid greenyellow" class="w3-round">
+    </div>
+
+    <section id="sliderType02">
+        <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider__inner">
+                    <!-- 각 이미지 -->
+                    <div class="slider">
+                        <img src="./Echo/esg.jpeg" alt="지구1">
+                    </div>
+                    <div class="slider">
+                        <img src="./Category/belt.png" alt="벨트">
+                    </div>
+                    <div class="slider">
+                        <img src="./Echo/EchoCat.JPG" alt="고양이">
+                    </div>
+                    <div class="slider">
+                        <img src="./Category/shoes.png" alt="신발">
+                    </div>
+                    <div class="slider">
+                        <img src="./Echo/earth.jpeg" alt="지구2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sliderInner = document.querySelector(".slider__inner");
+        const slider = document.querySelectorAll(".slider");
+        let currentIndex = 0;
+
+        sliderInner.style.transition = "all 1.0s";
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slider.length;
+
+            sliderInner.style.transform = "translateX(" + (-100 * currentIndex) + "%)";
+        }, 2000);
+    </script>
+</body>
+</html>
